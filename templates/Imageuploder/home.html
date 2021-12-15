@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <title>image uploder</title>
+  </head>
+  <body style="background-color: rgb(85, 205, 205);">
+    <div class="container">
+        <div class="py-0 text-center bg-secondary " >
+          <h1>ANKUR </h1>
+
+            <h1 class="mb-0 "">WEB-SITE IMAGE UPLOADER </h1>
+            <form action="" method="POST" enctype="multipart/form-data"> 
+                {% csrf_token %}
+                {{form}}
+                
+                <input type="submit" class="btn btn-danger" value="UPLOAD">
+                <a href="http://127.0.0.1:8000/about.html" class="btn btn-danger"> ABOUT ME</a> 
+            </form>
+
+        </div>
+      <div class="row">
+        {% for x in  img %}
+        <div  class="col-sm-4 ">
+          <div class="card m-4">
+            <img src="{{x.photo.url}}" alt="" class="card-img-top" height="300px" width="75%">
+            <div class="card-footer" style="background-color: pink;">
+              <small class="text-muted">{{x.date}}</small> 
+
+            </div>
+          </div>
+
+        </div>
+
+
+          
+        {% endfor %}
+
+
+      </div>  
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
