@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700");
+
+/* body {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+} */
+
+.header {
+  margin-left: 210px;
+  min-height: 60vh;
+  
+
+  color: slateblue;
+  /* clip-path: ellipse(100vw 60vh at 50% 50%); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.details {
+  text-align: center;
+}
+
+.profile-pic {
+  margin-right: 70px;
+  height: 6rem;
+  width: 6rem;
+  object-fit: center;
+  border-radius: 50%;
+  border: 2px solid rebeccapurple;
+}
+
+.location p {
+  
+  display: inline-block;
+}
+
+.location input {
+  margin-left: 40px;
+}
+
+.location svg {
+  vertical-align: middle;
+}
+
+.stats {
+  display: flex;
+}
+
+.stats .col-4 {
+  width: 10rem;
+  text-align: center;
+}
+
+.heading {
+  margin-right: 100px;
+  font-weight: 400;
+  font-size: 1.3rem;
+  margin: 1rem 0;
+}
+
+
+

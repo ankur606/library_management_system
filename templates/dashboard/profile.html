@@ -1,0 +1,29 @@
+{% extends 'pages/index.html' %}
+{% load static %}
+  <title>{% block title %} Skydash User Edit {% endblock title %} </title>
+      {% block content %}
+
+<section class="profile">
+  <header class="header">
+    <div class="details">
+      {% for all in all %}
+      {% if all.user_id == request.user.id  %}<img src="{{all.profile_image.url}}" alt="profile" class="profile-pic"/>
+      {% elif all.user_id != request.user.id  %}
+        
+      {% endif %}
+      {% endfor %}
+      
+      <h1 class="heading">{{request.user | capfirst}}</h1>
+      <div class="location">
+          <form action="" method="POST" enctype="multipart/form-data">
+              {% csrf_token %}
+          <label for="">Change Profile </label>
+          <input type="file" name="img" class="field text-field first-name-field" id="fileToUpload"><br>
+          <input type="submit" value="Set Profile" >
+        </form>
+      </div>
+    </div>
+  </header>
+</section>
+{% endblock content %}
+

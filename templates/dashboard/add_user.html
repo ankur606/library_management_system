@@ -1,0 +1,63 @@
+{% extends 'dashboard/index.html' %}
+{% load static %}
+  <title>{% block title %} Add User {% endblock title %} </title>
+      {% block content %}
+   
+       
+    <div class="col-md-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Add New User</h4>
+                  <p class="card-description">
+                   
+                  </p>
+                  <form class="forms-sample" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {% for message in messages %}
+                    <b style="color:#03e9f4" >{{message}}</b>
+                    {% endfor %} <br>
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Name</label>
+                      <input type="text" class="form-control" required id="exampleInputUsername1" placeholder="Enter Name" name="name">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Phone Number</label>
+                      <input type="text" class="form-control" required id="exampleInputUsername1" placeholder="Enter Phone Number" name="phone_number">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Email</label>
+                      <input type="text" class="form-control" required id="exampleInputEmail1" name="email" placeholder="Enter Email">
+                    </div>
+
+                    
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Password</label>
+                        <input type="password" class="form-control" required id="exampleInputEmail1" name="password" placeholder="Password">
+                      </div>
+
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Confirm Password</label>
+                        <input type="password" class="form-control" required id="exampleInputEmail1" name="password1" placeholder="Confirm Password">
+                      </div>
+
+                
+                    <br>      
+                    <div class="row" >       
+                    <button type="submit" class="btn btn-primary mr-2">Add User</button>
+                  </div> 
+                  <a href="{% url 'showUser' %}">Show All Users</a>
+                      
+
+
+
+
+
+
+
+
+                      
+                  </div>
+                  </form>
+                </div>
+              </div>
+      {% endblock content %}

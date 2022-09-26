@@ -1,0 +1,73 @@
+{% extends 'dashboard/index.html' %}
+{% load static %}
+  <title>{% block title %} Show user details {% endblock title %} </title>
+      {% block content %}
+      <div class="col-lg-11 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title"></h4>
+        <p class="card-description">
+         
+        </p>
+        <h4 class="card-title">All Books Recoard Details <a href="{% url 'addBooks' %}" class="btn btn-success btn-sm" style="margin-left: 22px;">Add New Books</a>
+        <div class="table-responsive">
+        {% for message in messages %}
+      <b style="color:#28c9ae">{{message}}</b>
+      {% endfor %} <br>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>
+                 Sr No
+                </th>
+                <th>
+                  Book Name
+                </th>
+                <th>
+                  Author Name
+                </th>
+                
+                <th>
+                  Created  Date
+                    </th>
+                <th>
+                  Action
+                </th>
+                
+              </tr>
+            </thead>
+            <tbody>
+            {% for data in book_data %}
+              <tr>
+              <td>
+                {{forloop.counter}}
+                  
+                </td>
+                <td>
+                  {{data.book_name}}
+                </td>
+        
+                 <td >
+                  {{data.auther}}
+                </td>
+                <td >
+                    {{data.created_date}}
+                  </td>
+               
+             
+                <td> 
+                <a href="{% url 'updaterecoard' data.id %}" class="btn btn-outline-success btn-sm">Edit</a>   
+                  <a href="{% url 'deleteBook' data.id %}" class="btn btn-outline-danger btn-sm" onclick="return confirm('Are You Sure')">Delete</a>
+                  
+                </td>
+                <td>..</td>
+                
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+      {% endblock content %}

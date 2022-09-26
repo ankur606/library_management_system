@@ -1,0 +1,53 @@
+{% extends 'dashboard/index.html' %}
+{% load static %}
+  <title>{% block title %} Add Team {% endblock title %} </title>
+      {% block content %}
+      <div class="col-md-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Add New Team {{data.book_name}}</h4>
+                <br>
+                  <form class="forms-sample" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {% for message in messages %}
+                    <b style="color:#03e9f4" >{{message}}</b>
+                    {% endfor %} <br>
+                    
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Add Book Name</label>
+                      <input type="text" class="form-control" required id="book_name" placeholder="Enter book name" name="book_name" value="{{ data.book_name }}" >
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Add Book Author Name</label>
+                      <input type="text" class="form-control" required id="author" placeholder="Enter author name" name="author" value="{{ data.auther }}" >
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Add Book ISBN Number</label>
+                      <input type="number" class="form-control" required id="book_isbn" placeholder="Enter book isbn number" name="book_isbn"  value="{{ data.book_isbn }}">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Add Book Category</label>
+                      <input type="text" class="form-control" required id="book_category" placeholder="Enter book category" name="book_category"  value="{{data.category}}">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Add Book Updated Date</label>
+                      <input type="date" class="form-control" required id="book_date" placeholder="Enter book category" name="book_date"  value="{{data.created_date}}">
+                    </div>
+                    <hr>
+                    
+
+                    
+                    <div class="row">
+
+                  
+                             
+                    <button type="submit" class="btn btn-primary mr-2">Update Book Recoard </button>
+                    
+                      
+                    
+                  </div>
+                  </form>
+                </div>
+              </div>
+    
+      {% endblock content %}
