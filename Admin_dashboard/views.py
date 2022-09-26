@@ -278,5 +278,9 @@ class BookDeleteViews(View):
         messages.success(request, ' Books Recoard Delete Successfully..!!')
         return redirect("showBooks") 
         
+
+
+def hello():
+    pass        
          
   
