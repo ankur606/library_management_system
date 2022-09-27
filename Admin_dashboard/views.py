@@ -280,7 +280,5 @@ class BookDeleteViews(View):
         
 
 
-def hello():
-    pass        
-         
+
   
